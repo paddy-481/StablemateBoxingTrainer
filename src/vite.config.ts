@@ -13,11 +13,10 @@ export default defineConfig({
     postcss: './postcss.config.js',
   },
   build: {
-    outDir: 'dist',
+    outDir: 'build',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild',
     emptyOutDir: true,
-    cssCodeSplit: true,
   },
 });

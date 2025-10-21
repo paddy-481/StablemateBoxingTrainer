@@ -301,36 +301,19 @@
     display: none !important;
   }
 
-  * {
-    border-color: var(--border);
-    outline-color: var(--ring);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    * {
-      outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
-  }
-
   body {
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: oklch(1 0 0);
+    color: oklch(.145 0 0);
   }
 
   * {
-    border-color: var(--border);
-    outline-color: var(--ring);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    * {
-      outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
+    border-color: oklch(.922 0 0);
+    outline-color: color-mix(in oklab, oklch(.708 0 0) 50%, transparent);
   }
 
   body {
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: oklch(1 0 0);
+    color: oklch(.145 0 0);
     font-family: Anton, Arial Black, Impact, sans-serif;
   }
 
@@ -687,11 +670,11 @@
   }
 
   .rounded-md {
-    border-radius: calc(var(--radius)  - 2px);
+    border-radius: .425rem;
   }
 
   .rounded-sm {
-    border-radius: calc(var(--radius)  - 4px);
+    border-radius: .225rem;
   }
 
   .border {
@@ -714,7 +697,7 @@
   }
 
   .border-input {
-    border-color: var(--input);
+    border-color: oklch(.922 0 0);
   }
 
   .\!bg-transparent {
@@ -734,15 +717,11 @@
   }
 
   .bg-border {
-    background-color: var(--border);
-  }
-
-  .bg-input-background {
-    background-color: var(--input-background);
+    background-color: oklch(.922 0 0);
   }
 
   .bg-popover {
-    background-color: var(--popover);
+    background-color: oklch(1 0 0);
   }
 
   .\!p-0 {
@@ -910,11 +889,11 @@
   }
 
   .text-muted-foreground {
-    color: var(--muted-foreground);
+    color: oklch(.556 0 0);
   }
 
   .text-popover-foreground {
-    color: var(--popover-foreground);
+    color: oklch(.145 0 0);
   }
 
   .uppercase {
@@ -1009,11 +988,11 @@
   }
 
   .focus\:bg-accent:focus {
-    background-color: var(--accent);
+    background-color: oklch(.97 0 0);
   }
 
   .focus\:text-accent-foreground:focus {
-    color: var(--accent-foreground);
+    color: oklch(.205 0 0);
   }
 
   .focus\:ring-0:focus {
@@ -1022,7 +1001,7 @@
   }
 
   .focus-visible\:border-ring:focus-visible {
-    border-color: var(--ring);
+    border-color: oklch(.708 0 0);
   }
 
   .focus-visible\:ring-0:focus-visible {
@@ -1036,13 +1015,7 @@
   }
 
   .focus-visible\:ring-ring\/50:focus-visible {
-    --tw-ring-color: var(--ring);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .focus-visible\:ring-ring\/50:focus-visible {
-      --tw-ring-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
+    --tw-ring-color: color-mix(in oklab, oklch(.708 0 0) 50%, transparent);
   }
 
   .active\:scale-95:active {
@@ -1065,17 +1038,11 @@
   }
 
   .aria-invalid\:border-destructive[aria-invalid="true"] {
-    border-color: var(--destructive);
+    border-color: oklch(.577 .245 27.325);
   }
 
   .aria-invalid\:ring-destructive\/20[aria-invalid="true"] {
-    --tw-ring-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .aria-invalid\:ring-destructive\/20[aria-invalid="true"] {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
+    --tw-ring-color: color-mix(in oklab, oklch(.577 .245 27.325) 20%, transparent);
   }
 
   .data-\[disabled\]\:pointer-events-none[data-disabled] {
@@ -1087,7 +1054,7 @@
   }
 
   .data-\[placeholder\]\:text-muted-foreground[data-placeholder] {
-    color: var(--muted-foreground);
+    color: oklch(.556 0 0);
   }
 
   .data-\[side\=bottom\]\:translate-y-1[data-side="bottom"] {
@@ -1288,35 +1255,23 @@
     }
   }
 
-  .dark\:bg-input\/30:is(.dark *) {
-    background-color: var(--input);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .dark\:bg-input\/30:is(.dark *) {
-      background-color: color-mix(in oklab, var(--input) 30%, transparent);
+  @media (prefers-color-scheme: dark) {
+    .dark\:bg-input\/30 {
+      background-color: color-mix(in oklab, oklch(.922 0 0) 30%, transparent);
     }
   }
 
-  @media (hover: hover) {
-    .dark\:hover\:bg-input\/50:is(.dark *):hover {
-      background-color: var(--input);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .dark\:hover\:bg-input\/50:is(.dark *):hover {
-        background-color: color-mix(in oklab, var(--input) 50%, transparent);
+  @media (prefers-color-scheme: dark) {
+    @media (hover: hover) {
+      .dark\:hover\:bg-input\/50:hover {
+        background-color: color-mix(in oklab, oklch(.922 0 0) 50%, transparent);
       }
     }
   }
 
-  .dark\:aria-invalid\:ring-destructive\/40:is(.dark *)[aria-invalid="true"] {
-    --tw-ring-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .dark\:aria-invalid\:ring-destructive\/40:is(.dark *)[aria-invalid="true"] {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 40%, transparent);
+  @media (prefers-color-scheme: dark) {
+    .dark\:aria-invalid\:ring-destructive\/40[aria-invalid="true"] {
+      --tw-ring-color: color-mix(in oklab, oklch(.577 .245 27.325) 40%, transparent);
     }
   }
 
@@ -1334,7 +1289,7 @@
   }
 
   .\[\&_svg\:not\(\[class\*\=\'text-\'\]\)\]\:text-muted-foreground svg:not([class*="text-"]) {
-    color: var(--muted-foreground);
+    color: oklch(.556 0 0);
   }
 
   :is(.\*\:\[span\]\:last\:flex > *):is(span):last-child {

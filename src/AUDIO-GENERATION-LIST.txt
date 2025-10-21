@@ -1,0 +1,174 @@
+================================================================================
+AUDIO FILES TO GENERATE (51 total)
+Copy each line, paste into ElevenLabs, generate, download with exact filename
+================================================================================
+
+=== SYSTEM SOUNDS (14 files) ===
+
+Text: "Round 1. Box!"
+Filename: round-1-box.mp3
+
+Text: "Round 2. Box!"
+Filename: round-2-box.mp3
+
+Text: "Round 3. Box!"
+Filename: round-3-box.mp3
+
+Text: "Round 4. Box!"
+Filename: round-4-box.mp3
+
+Text: "Round 5. Box!"
+Filename: round-5-box.mp3
+
+Text: "Round 6. Box!"
+Filename: round-6-box.mp3
+
+Text: "Round 7. Box!"
+Filename: round-7-box.mp3
+
+Text: "Round 8. Box!"
+Filename: round-8-box.mp3
+
+Text: "Round 9. Box!"
+Filename: round-9-box.mp3
+
+Text: "Round 10. Box!"
+Filename: round-10-box.mp3
+
+Text: "Round 11. Box!"
+Filename: round-11-box.mp3
+
+Text: "Round 12. Box!"
+Filename: round-12-box.mp3
+
+Text: "Rest. Good work!"
+Filename: rest-good-work.mp3
+
+Text: "Training complete! Great work!"
+Filename: training-complete.mp3
+
+=== COMBOS (27 files) ===
+
+Text: "1, 1"
+Filename: combo-1-1.mp3
+
+Text: "1, 2"
+Filename: combo-1-2.mp3
+
+Text: "1, 1, 1"
+Filename: combo-1-1-1.mp3
+
+Text: "1, 1, 2"
+Filename: combo-1-1-2.mp3
+
+Text: "1, 1, 6"
+Filename: combo-1-1-6.mp3
+
+Text: "1, 1, 2, 3"
+Filename: combo-1-1-2-3.mp3
+
+Text: "1, 1, 2, 6"
+Filename: combo-1-1-2-6.mp3
+
+Text: "1, 1, 3, 2"
+Filename: combo-1-1-3-2.mp3
+
+Text: "1, 1, 3, 6"
+Filename: combo-1-1-3-6.mp3
+
+Text: "1, 2, 3"
+Filename: combo-1-2-3.mp3
+
+Text: "1, 2, 6"
+Filename: combo-1-2-6.mp3
+
+Text: "1, 2, 3, 2"
+Filename: combo-1-2-3-2.mp3
+
+Text: "1, 2, 3, 6"
+Filename: combo-1-2-3-6.mp3
+
+Text: "1, 2, 3 body"
+Filename: combo-1-2-3-body.mp3
+
+Text: "1, 2, 5, 2"
+Filename: combo-1-2-5-2.mp3
+
+Text: "1, 2 body, 3"
+Filename: combo-1-2-body-3.mp3
+
+Text: "1, 2 body, 6"
+Filename: combo-1-2-body-6.mp3
+
+Text: "1, 3, 2"
+Filename: combo-1-3-2.mp3
+
+Text: "1, 3 body, 2"
+Filename: combo-1-3-body-2.mp3
+
+Text: "1, 5, 2"
+Filename: combo-1-5-2.mp3
+
+Text: "1, 6, 3"
+Filename: combo-1-6-3.mp3
+
+Text: "2, 3"
+Filename: combo-2-3.mp3
+
+Text: "2, 3, 2"
+Filename: combo-2-3-2.mp3
+
+Text: "2, 3, 6, 3"
+Filename: combo-2-3-6-3.mp3
+
+Text: "3, 2"
+Filename: combo-3-2.mp3
+
+Text: "3, 2, 3"
+Filename: combo-3-2-3.mp3
+
+Text: "3 body, 3"
+Filename: combo-3-body-3.mp3
+
+=== MOVEMENTS (10 files) ===
+
+Text: "Move left"
+Filename: move-left.mp3
+
+Text: "Move right"
+Filename: move-right.mp3
+
+Text: "Step back"
+Filename: step-back.mp3
+
+Text: "Step forward"
+Filename: step-forward.mp3
+
+Text: "Circle left"
+Filename: circle-left.mp3
+
+Text: "Circle right"
+Filename: circle-right.mp3
+
+Text: "Pivot left"
+Filename: pivot-left.mp3
+
+Text: "Pivot right"
+Filename: pivot-right.mp3
+
+Text: "Duck"
+Filename: duck.mp3
+
+Text: "Slip"
+Filename: slip.mp3
+
+================================================================================
+TOTAL: 51 MP3 files
+================================================================================
+
+AFTER GENERATING:
+1. Create folders in your GitHub repo: /audio/system, /audio/combos, /audio/movements
+2. Upload files to correct folders
+3. Push to GitHub main branch
+4. Redeploy on Vercel
+5. Audio should work! 🎤🥊

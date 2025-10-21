@@ -19,7 +19,7 @@ const loadingPromises = new Map<string, Promise<AudioBuffer>>();
 const activeSources = new Set<AudioBufferSourceNode>();
 
 // 🌐 Audio files hosted on GitHub CDN
-const AUDIO_BASE_URL = 'https://raw.githubusercontent.com/paddy-481/StablemateBoxingTrainer2/main/';
+const AUDIO_BASE_URL = 'https://raw.githubusercontent.com/paddy-481/StablemateBoxingTrainer/main/';
 
 // Audio file mappings (same as before)
 const AUDIO_FILES = {

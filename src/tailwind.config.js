@@ -2,7 +2,9 @@
 export default {
   content: [
     "./index.html",
-    "./**/*.{js,ts,jsx,tsx}",
+    "./App.tsx",
+    "./main.tsx",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -17,6 +19,8 @@ export default {
           DEFAULT: '#EBEBEB',
           foreground: '#222222',
         },
+        border: '#222222',
+        ring: '#222222',
       },
     },
   },

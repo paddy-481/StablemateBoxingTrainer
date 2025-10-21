@@ -15,6 +15,9 @@ let isUnlocked = false;
 const audioBuffers = new Map<string, AudioBuffer>();
 const loadingPromises = new Map<string, Promise<AudioBuffer>>();
 
+// Track active audio sources
+const activeSources = new Set<AudioBufferSourceNode>();
+
 // 🌐 Audio files hosted on GitHub CDN
 const AUDIO_BASE_URL = 'https://raw.githubusercontent.com/paddy-481/StablemateBoxingTrainer2/main/';
 
@@ -259,7 +262,7 @@ async function loadAudioBuffer(key: string): Promise<AudioBuffer | null> {
 /**
  * Play an audio buffer
  */
-function playBuffer(buffer: AudioBuffer): AudioBufferSourceNode {
+function playBuffer(buffer: AudioBuffer, onComplete?: () => void): AudioBufferSourceNode {
   if (!audioContext) {
     audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
   }
@@ -268,6 +271,15 @@ function playBuffer(buffer: AudioBuffer): AudioBufferSourceNode {
   source.buffer = buffer;
   source.connect(audioContext.destination);
   source.start(0);
+  
+  // Track active source
+  activeSources.add(source);
+  
+  // Remove from tracking when finished and call callback
+  source.onended = () => {
+    activeSources.delete(source);
+    if (onComplete) onComplete();
+  };
   
   return source;
 }
@@ -417,6 +429,52 @@ export async function playComboWithMovement(text: string): Promise<void> {
       }
     }
   }
+}
+
+/**
+ * Stop all currently playing audio
+ */
+export function stopAudio(): void {
+  // Stop all active audio sources
+  activeSources.forEach(source => {
+    try {
+      source.stop();
+      source.disconnect();
+    } catch (e) {
+      // Source may have already stopped
+    }
+  });
+  activeSources.clear();
+  console.log('⏸️ All audio stopped');
+}
+
+/**
+ * Stop browser speech synthesis
+ */
+export function stopSpeech(): void {
+  if (window.speechSynthesis) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+/**
+ * Fast browser TTS (for Robot mode)
+ */
+export function speakFast(text: string): void {
+  if (!window.speechSynthesis) {
+    console.warn('⚠️ Speech synthesis not supported');
+    return;
+  }
+
+  // Cancel any ongoing speech
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 1.2; // Slightly faster
+  utterance.pitch = 1.0;
+  utterance.volume = 1.0;
+
+  window.speechSynthesis.speak(utterance);
 }
 
 /**

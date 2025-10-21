@@ -7,7 +7,10 @@ import {
   playRoundStart,
   playRest,
   playComboWithMovement,
-  playComplete
+  playComplete,
+  stopAudio,
+  stopSpeech,
+  speakFast
 } from './mobile-audio-player';
 
 function PlayButton({ onClick, isPlaying }: { onClick: () => void; isPlaying: boolean }) {

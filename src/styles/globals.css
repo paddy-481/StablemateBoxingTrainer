@@ -1,4 +1,4 @@
-```css
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -198,4 +198,3 @@ Base typography. This is not applied to elements which have an ancestor with a T
 html {
   font-size: var(--font-size);
 }
-```

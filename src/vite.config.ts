@@ -9,11 +9,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './'),
     },
   },
+  css: {
+    postcss: './postcss.config.js',
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'terser',
     emptyOutDir: true,
+    cssCodeSplit: true,
   },
 });
